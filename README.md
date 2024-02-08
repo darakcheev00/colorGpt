@@ -9,7 +9,7 @@
 #### 1) Clone repo
 
 ```bash
-git clone https://github.com/darakcheev00/gptcolorpicker
+git clone https://github.com/darakcheev00/prettyGpt
 ```
 
 #### 2) Open Chrome extension manager
