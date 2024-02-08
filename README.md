@@ -2,7 +2,7 @@
 
 ## ChatGPT background color switcher
 
-![Alt Text](idea.png)
+![Alt Text](images/idea.png)
 
 ## How to setup
 
@@ -17,10 +17,13 @@ git clone https://github.com/darakcheev00/gptcolorpicker
 
 #### 3) Click "Load unpacked" and open the repo folder
 
-![Alt Text](loadunpacked.png)
+![Alt Text](images/loadunpacked.png)
 
 #### 4) Open ChatGPT and select background color from extension popup
 [https://chat.openai.com/](https://chat.openai.com/)
 
-![Alt Text](ss.png)
+![Alt Text](images/ss.png)
 
+See ChatGPT change color:
+
+![Alt Text](images/gpt.png)
