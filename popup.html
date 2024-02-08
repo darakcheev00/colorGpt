@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-<html style="width: 250px; height: 300px;">
+<html style="width: 250px; height: 380px;">
 
 
 <head>
   <title>Color Changer</title>
   <style>
     .color-circle {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
+      width: 100px;
+      height: 25px;
+      /* border-radius: 10%; */
       margin: 5px;
       cursor: pointer;
     }
@@ -21,10 +21,18 @@
 <body>
   <input type="color" id="colorPicker" value="#343541"> <!-- Set the default color value -->
   <button id="changeColorBtn">Change Color</button>
-  <div>
-    <div class="color-circle" style="background-color: #343541" onclick="setPresetColor('#343541')"></div>
-    <div class="color-circle" style="background-color: #FF5733" onclick="setPresetColor('#FF5733')"></div>
-    <div class="color-circle" style="background-color: #7CB342" onclick="setPresetColor('#7CB342')"></div>
+  <div id="colorCircles">
+    <div class="color-circle" style="background-color: #343541"></div>
+    <div class="color-circle" style="background-color: #7a3928"></div>
+    <div class="color-circle" style="background-color: #815f24"></div>
+    <div class="color-circle" style="background-color: #495d19"></div>
+    <div class="color-circle" style="background-color: #1f5d1d"></div>
+    <div class="color-circle" style="background-color: #3E7E6F"></div>
+    <div class="color-circle" style="background-color: #146048"></div>
+    <div class="color-circle" style="background-color: #20446b"></div>
+    <div class="color-circle" style="background-color: #363763"></div>
+    <div class="color-circle" style="background-color: #7947a3"></div>
+    <div class="color-circle" style="background-color: #822a77"></div>
   </div>
 </body>
 

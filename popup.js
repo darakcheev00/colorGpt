@@ -21,24 +21,47 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
   }
 
-  window.setPresetColor = function(color) {
-    colorPicker.value = color;
-    console.log(`new color: ${color}`);
-
-    // Move chrome.tabs.query inside the setPresetColor function
+  // Function to set the color from a preset circle
+  window.setPresetColor = function (color) {
+    var formattedColor = rgbToHex(color);
+    console.log(`the color: ${formattedColor}`);
+    colorPicker.value = formattedColor;
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { action: 'changeColor', color: color });
+      chrome.tabs.sendMessage(tabs[0].id, { action: 'changeColor', color: formattedColor });
     });
   };
+
+  // Add event listeners to the color circles dynamically
+  var colorCircles = document.getElementById('colorCircles');
+  colorCircles.addEventListener('click', function (event) {
+    var target = event.target;
+    if (target.classList.contains('color-circle')) {
+      var chosenColor = target.style.backgroundColor;
+      console.log(`chosen color: ${chosenColor}`);
+      setPresetColor(chosenColor);
+    }
+  });
 });
 
 
 getGPTColorFromStorage = async () => {
   return new Promise((resolve) => {
-      chrome.storage.local.get(['gptColor'], (data) => {
-          const gptColor = data.gptColor || '#343541'; // Provide a default color if not found
-          console.log(`Retrieved gpt background color from storage: ${gptColor}`);
-          resolve(gptColor);
-      });
+    chrome.storage.local.get(['gptColor'], (data) => {
+      const gptColor = data.gptColor || '#343541'; // Provide a default color if not found
+      console.log(`Retrieved gpt background color from storage: ${gptColor}`);
+      resolve(gptColor);
+    });
   });
 };
+
+function rgbToHex(rgb) {
+  // Convert the RGB color to hex format
+  var match = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+  if (!match) {
+    return rgb; // Return original color if not in RGB format
+  }
+  var hex = '#' + ('0' + parseInt(match[1], 10).toString(16)).slice(-2) +
+             ('0' + parseInt(match[2], 10).toString(16)).slice(-2) +
+             ('0' + parseInt(match[3], 10).toString(16)).slice(-2);
+  return hex;
+}
