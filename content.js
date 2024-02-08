@@ -60,9 +60,6 @@ const setColor = (newColor) => {
 	const colorFromStorage = await getGPTColorFromStorage();
 	setColor(colorFromStorage);
 
-	const imagePath = chrome.runtime.getURL('images/ss.png');
-	document.body.style.backgroundImage = `url("${imagePath}")`;
-
 	chrome.runtime.onMessage.addListener(
 		async function (request, sender, sendResponse) {
 			if (request.action === 'changeColor') {
