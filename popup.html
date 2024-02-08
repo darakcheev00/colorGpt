@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<html style="width: 250px; height: 300px;">
+
+
+<head>
+  <title>Color Changer</title>
+  <style>
+    .color-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <input type="color" id="colorPicker" value="#343541"> <!-- Set the default color value -->
+  <button id="changeColorBtn">Change Color</button>
+  <div>
+    <div class="color-circle" style="background-color: #343541" onclick="setPresetColor('#343541')"></div>
+    <div class="color-circle" style="background-color: #FF5733" onclick="setPresetColor('#FF5733')"></div>
+    <div class="color-circle" style="background-color: #7CB342" onclick="setPresetColor('#7CB342')"></div>
+  </div>
+</body>
+
+</html>
