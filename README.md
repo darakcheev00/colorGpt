@@ -26,4 +26,4 @@ git clone https://github.com/darakcheev00/prettyGpt
 
 See ChatGPT change color:
 
-![Alt Text](images/gpt.png)
+![Alt Text](images/full_ss.png)

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Pretty GPT",
+  "name": "ColorGPT",
   "version": "1.0",
   "description": "ChatGPT background color switcher",
   "permissions": [
@@ -12,7 +12,7 @@
     "default_popup": "popup.html"
   },
   "icons": {
-    "48": "images/logo.png"
+    "48": "images/logo_48.png"
   },
   "content_scripts": [
     {
