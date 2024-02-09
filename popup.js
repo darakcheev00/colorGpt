@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
     // This ensures that the DOM is fully loaded before attempting to access elements
-    
+
     // 1 ===================================================================
     var colorPicker1 = document.getElementById(`colorPicker1`);
     colorPicker1.value = await getCustomColorFromStorage(1);
@@ -63,14 +63,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     };
 
     // Add event listeners to the color circles dynamically
-    var colorCircles = document.getElementById('colorCircles');
-    colorCircles.addEventListener('click', function (event) {
-        var target = event.target;
-        if (target.classList.contains('color-circle')) {
-            var chosenColor = target.style.backgroundColor;
+    var colorCircles = document.querySelectorAll('.color-circle');
+    colorCircles.forEach(function (circle) {
+        circle.addEventListener('click', function (event) {
+            var chosenColor = circle.style.backgroundColor;
             console.log(`chosen color: ${chosenColor}`);
             setPresetColor(chosenColor);
-        }
+        });
     });
 });
 

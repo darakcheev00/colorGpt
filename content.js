@@ -1,14 +1,14 @@
 
 setCustomColorInStorage = async (index, newColor) => {
-	if (index == 1){
+	if (index == 1) {
 		await chrome.storage.local.set({ customColor1: newColor }, () => {
 			console.log(`customColor1 saved in chrome storage ${newColor}`);
 		});
-	} else if (index == 2){
+	} else if (index == 2) {
 		await chrome.storage.local.set({ customColor2: newColor }, () => {
 			console.log(`customColor2 saved in chrome storage ${newColor}`);
 		});
-	} else if (index == 3){
+	} else if (index == 3) {
 		await chrome.storage.local.set({ customColor3: newColor }, () => {
 			console.log(`customColor3 saved in chrome storage ${newColor}`);
 		});
@@ -45,15 +45,21 @@ getGPTColorFromStorage = async () => {
 
 
 const setColor = (newColor) => {
-	var styleElement = document.createElement('style');
+	const isDarkMode = document.documentElement.classList.contains('dark');
 
-	styleElement.textContent = `
-            :root.dark {
-                --main-surface-primary: ${newColor};
-            }
-            `;
-
-	document.head.appendChild(styleElement);
+	if (isDarkMode) {
+		var styleElementDark = document.createElement('style');
+		styleElementDark.textContent = `:root.dark {
+            --main-surface-primary: ${newColor};
+        }`;
+		document.head.appendChild(styleElementDark);
+	} else {
+		var styleElementLight = document.createElement('style');
+		styleElementLight.textContent = `html {
+										--main-surface-primary: ${newColor};
+									}`;
+		document.head.appendChild(styleElementLight);
+	}
 }
 
 (async () => {
@@ -72,7 +78,7 @@ const setColor = (newColor) => {
 			}
 		}
 	);
-})();	
+})();
 
 // original color
 // #343541

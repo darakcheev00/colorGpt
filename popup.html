@@ -12,18 +12,28 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 10px; /* Add some padding for spacing */
+      padding: 10px;
+      /* Add some padding for spacing */
     }
 
-    h2, h3 {
+    h2,
+    h3 {
       color: white;
     }
 
     #colorCircles {
       display: flex;
+      flex-wrap: wrap;
+      /* Enable wrapping to create two rows */
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .row {
+      display: flex;
       justify-content: space-around;
       width: 100%;
-      margin-bottom: 10px; /* Add some margin for spacing */
     }
 
     .color-circle {
@@ -37,7 +47,8 @@
     .color-picker-container {
       display: flex;
       align-items: center;
-      margin-bottom: 10px; /* Add some margin for spacing between divs */
+      margin-bottom: 10px;
+      /* Add some margin for spacing between divs */
     }
 
     /* Style for custom color inputs and buttons */
@@ -45,11 +56,13 @@
       width: 40px;
       height: 40px;
       border-radius: 15%;
-      margin-right: 10px; /* Add some margin for spacing */
+      margin-right: 10px;
+      /* Add some margin for spacing */
     }
 
     button {
-      background-color: #5b5b5b; /* Green background color */
+      background-color: #5b5b5b;
+      /* Green background color */
       color: white;
       border: none;
       padding: 5px 15px;
@@ -68,7 +81,22 @@
 <body>
   <h2>PrettyGPT</h2>
   <h3>Presets</h3>
-  <div id="colorCircles">
+
+  <div class="row">
+    <div class="color-circle" style="background-color: #ffffff"></div>
+    <div class="color-circle" style="background-color: #b5b5b5"></div>
+    <div class="color-circle" style="background-color: #ff9175"></div>
+    <div class="color-circle" style="background-color: #ffca6e"></div>
+    <div class="color-circle" style="background-color: #f2ffa1"></div>
+    <div class="color-circle" style="background-color: #a0ff8f"></div>
+    <div class="color-circle" style="background-color: #a1ffe1"></div>
+    <div class="color-circle" style="background-color: #abffd9"></div>
+    <div class="color-circle" style="background-color: #b6d9ff"></div>
+    <div class="color-circle" style="background-color: #b9baff"></div>
+    <div class="color-circle" style="background-color: #deb6ff"></div>
+    <div class="color-circle" style="background-color: #ffb9f6"></div>
+  </div>
+  <div class="row">
     <div class="color-circle" style="background-color: #171717"></div>
     <div class="color-circle" style="background-color: #343541"></div>
     <div class="color-circle" style="background-color: #7a3928"></div>
