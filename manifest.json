@@ -5,8 +5,7 @@
   "description": "ChatGPT background color switcher",
   "permissions": [
     "activeTab",
-    "storage",
-    "scripting"
+    "storage"
   ],
   "action": {
     "default_popup": "popup.html"
